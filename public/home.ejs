@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style>
+    /* ... Your existing CSS styles ... */
+
+    .navbar {
+      background-color: #3498db;
+      color: #322525;
+      padding: 10px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .navbar li {
+      margin-right: 10px;
+    }
+
+    .navbar li a {
+      color: #291212;
+      text-decoration: none;
+    }
+
+    .navbar li a.logout {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <% if (user) { %>
+      <a style="color: #333333;" href="#">Welcome <%= user %></a>
+      <a class="logout" href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a>
+    <% } %>
+    <a href="#">Election Name</a>
+  </div>
+  <div class="container">
+    <!-- Rest of your existing code -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <span class="logo">Election Name</span>
+      <div class="nav-links">
+        <% if (isLoggedIn) { %>
+          <a href="/logout">Logout</a>
+        <% } else { %>
+          <a href="/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Admin Panel</h1>
+    <h2>Candidates:</h2>
+    <ul>
+      <% for (let i = 0; i < candidates.length; i++) { %>
+        <li><%= 'Candidate ' + (i+1) + ' - ' + candidates[i].vote_count %></li>
+      <% } %>
+    </ul>
+  </div>
+</body>
+</html>
